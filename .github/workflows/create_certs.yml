@@ -76,6 +76,11 @@ jobs:
         run: bundle _${{ env.BUNDLER_VER }}_ exec fastlane check_and_renew_certificates
         id: check_certs
 
+      - name: Debug certificate variables
+        run: |
+          echo "ENABLE_NUKE_CERTS=[${{ vars.ENABLE_NUKE_CERTS }}]"
+          echo "FORCE_NUKE_CERTS=[${{ vars.FORCE_NUKE_CERTS }}]"
+          
       - name: Set output and annotations based on Fastlane result
         id: set_output
         run: |
