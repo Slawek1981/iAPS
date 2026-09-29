@@ -39,6 +39,8 @@ jobs:
       - name: Show Auto Build Status
         run: |
           echo "Auto Build Status: ${{ steps.auto-build-enabled.outputs.auto_build }}"
+          echo "ENABLE_NUKE_CERTS=[${{ vars.ENABLE_NUKE_CERTS }}]"
+          echo "FORCE_NUKE_CERTS=[${{ vars.FORCE_NUKE_CERTS }}]"
     # Checks if Distribution certificate is present and valid, optionally nukes and
     # creates new certs if the repository variable ENABLE_NUKE_CERTS == 'true'
   check_certs:
