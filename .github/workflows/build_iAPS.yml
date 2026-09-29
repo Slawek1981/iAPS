@@ -49,8 +49,8 @@ jobs:
     if: needs.auto_build_check.outputs.AUTO_BUILD_ENABLED == 'true' || github.event_name == 'workflow_dispatch'
     uses: ./.github/workflows/create_certs.yml
     with:
-      enable_nuke_certs: ${{ vars.ENABLE_NUKE_CERTS }}
-      force_nuke_certs: ${{ vars.FORCE_NUKE_CERTS }}
+      enable_nuke_certs: 'true'
+      force_nuke_certs: 'false'
     secrets: inherit
   check_latest_from_upstream:
     needs: [check_certs]
